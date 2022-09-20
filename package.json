@@ -2,7 +2,7 @@
   "name": "random-qoute-machine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PabloPicas0.github.io/random-qoute-machine",
+  "homepage": "https://PabloPicas0.github.io/random-quote-machine",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
