@@ -44,7 +44,7 @@ const App = () => {
         style={{ backgroundColor: `${color}` }}>
         <div id="quote-box" className="shadow text-dark p-4 rounded bg-white">
           <div id="text" className="text-center mb-3 mx-4 quote-text">
-            <FontAwesomeIcon icon={faQuoteLeft} />{" "}
+            <FontAwesomeIcon icon={faQuoteLeft} />
             <span key={quotes._id}>{quotes.content}</span>
           </div>
 
