@@ -69,7 +69,7 @@ const App = () => {
                 className="media me-2 text-white rounded"
                 title="Add this quote to github!"
                 id="github-quote"
-                href="#">
+                href="https://github.com/PabloPicas0">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
