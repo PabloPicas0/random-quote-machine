@@ -8,22 +8,34 @@ import { faFreeCodeCamp, faGithub, faXTwitter } from "@fortawesome/free-brands-s
 const App = () => {
   const [quotes, setQuotes] = useState(null);
   const [color, setColor] = useState("#4048a9");
+  const [isLoading, setIsLoading] = useState(false);
 
   //fetch data from api and display it
   const fetchQuote = async (signal) => {
     try {
+      setIsLoading(true);
+
       const data = await fetch("https://api.quotable.io/random", { signal: signal });
       const results = await data.json();
 
       setQuotes(results);
+      setIsLoading(false);
     } catch (error) {
-      console.error(error)
+      console.error(error);
+      setIsLoading(false);
+
+      setQuotes({
+        _id: Math.random(),
+        content: "Connection error. Please try again.",
+        author: "Admin",
+      });
     }
   };
 
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
+
     fetchQuote(signal);
 
     return () => controller.abort();
@@ -69,6 +81,7 @@ const App = () => {
                     href="https://www.freecodecamp.org/PabloPicaso">
                     <FontAwesomeIcon icon={faFreeCodeCamp} />
                   </a>
+
                   <a
                     style={{ backgroundColor: `${color}` }}
                     className="media me-2 text-white rounded"
@@ -77,6 +90,7 @@ const App = () => {
                     href="https://github.com/PabloPicas0">
                     <FontAwesomeIcon icon={faGithub} />
                   </a>
+
                   <a
                     style={{ backgroundColor: `${color}` }}
                     className="media me-2 text-white rounded"
@@ -95,7 +109,8 @@ const App = () => {
                     fetchQuote();
                     randomHex();
                   }}
-                  type="button">
+                  type="button"
+                  disabled={isLoading}>
                   New Quote
                 </button>
               </div>
