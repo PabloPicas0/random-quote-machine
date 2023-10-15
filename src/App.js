@@ -23,12 +23,6 @@ const App = () => {
     } catch (error) {
       console.error(error);
       setIsLoading(false);
-
-      setQuotes({
-        _id: Math.random(),
-        content: "Connection error. Please try again.",
-        author: "Admin",
-      });
     }
   };
 
