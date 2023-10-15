@@ -7,6 +7,7 @@ import {
   faFreeCodeCamp,
   faGithub,
   faTwitter,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 const App = () => {
@@ -74,10 +75,10 @@ const App = () => {
               <a
                 style={{ backgroundColor: `${color}` }}
                 className="media me-2 text-white rounded"
-                title="Add this qoute in your twitter profile!"
+                title="Add this qoute in your X profile!"
                 id="tweet-quote"
                 href="twitter.com/intent/tweet">
-                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </div>
 
