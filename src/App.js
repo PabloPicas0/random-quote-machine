@@ -14,12 +14,11 @@ const App = () => {
   const [color, setColor] = useState("#4048a9");
 
   //fetch data from api and display it
-  const fetchQuote = () => {
-    fetch("https://api.quotable.io/random")
-      .then((data) => data.json())
-      .then((results) => {
-        setQuotes(results);
-      });
+  const fetchQuote = async () => {
+    const data = await fetch("https://api.quotable.io/random");
+    const results = await data.json()
+
+    setQuotes(results)
   };
 
   useEffect(() => {
